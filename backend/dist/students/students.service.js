@@ -20,9 +20,7 @@ let StudentsService = class StudentsService {
             return await this.prisma.student.create({
                 data: {
                     ...dto,
-                    dateOfBirth: dto.dateOfBirth
-                        ? new Date(dto.dateOfBirth)
-                        : null,
+                    dateOfBirth: dto.dateOfBirth ? new Date(dto.dateOfBirth) : null,
                 },
             });
         }
@@ -58,9 +56,7 @@ let StudentsService = class StudentsService {
                 data: {
                     ...dto,
                     ...(dto.dateOfBirth !== undefined && {
-                        dateOfBirth: dto.dateOfBirth
-                            ? new Date(dto.dateOfBirth)
-                            : null,
+                        dateOfBirth: dto.dateOfBirth ? new Date(dto.dateOfBirth) : null,
                     }),
                 },
             });

@@ -19,9 +19,7 @@ export class StudentsService {
       return await this.prisma.student.create({
         data: {
           ...dto,
-          dateOfBirth: dto.dateOfBirth
-            ? new Date(dto.dateOfBirth)
-            : null,
+          dateOfBirth: dto.dateOfBirth ? new Date(dto.dateOfBirth) : null,
         },
       });
     } catch (error) {
@@ -68,15 +66,13 @@ export class StudentsService {
         data: {
           ...dto,
           ...(dto.dateOfBirth !== undefined && {
-            dateOfBirth: dto.dateOfBirth
-              ? new Date(dto.dateOfBirth)
-              : null,
+            dateOfBirth: dto.dateOfBirth ? new Date(dto.dateOfBirth) : null,
           }),
         },
       });
     } catch (error) {
       if (
-        error instanceof Prisma.PrismaClientKnownRequestError &&
+        error instanceof Prisma.PrismaClientKnownRequestError  &&
         error.code === 'P2002'
       ) {
         throw new ConflictException('Email already exists.');

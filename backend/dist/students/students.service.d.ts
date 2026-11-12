@@ -5,46 +5,46 @@ export declare class StudentsService {
     private readonly prisma;
     constructor(prisma: PrismaService);
     create(dto: CreateStudentDto): Promise<{
+        id: string;
         firstName: string;
         lastName: string;
         email: string;
         phone: string | null;
         dateOfBirth: Date | null;
         address: string | null;
-        id: string;
         createdAt: Date;
         updatedAt: Date;
     }>;
     findAll(): Promise<{
+        id: string;
         firstName: string;
         lastName: string;
         email: string;
         phone: string | null;
         dateOfBirth: Date | null;
         address: string | null;
-        id: string;
         createdAt: Date;
         updatedAt: Date;
     }[]>;
     findOne(id: string): Promise<{
+        id: string;
         firstName: string;
         lastName: string;
         email: string;
         phone: string | null;
         dateOfBirth: Date | null;
         address: string | null;
-        id: string;
         createdAt: Date;
         updatedAt: Date;
     }>;
     update(id: string, dto: UpdateStudentDto): Promise<{
+        id: string;
         firstName: string;
         lastName: string;
         email: string;
         phone: string | null;
         dateOfBirth: Date | null;
         address: string | null;
-        id: string;
         createdAt: Date;
         updatedAt: Date;
     }>;
